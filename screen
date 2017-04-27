@@ -1,0 +1,16 @@
+#start a new session
+screen -S new_session_name
+
+# list all my current sessions
+screen -list
+
+# resume a current one
+screen -r
+
+#inside a screen buffer:
+Ctrl-a d = detaches from screen (it stays in background)
+Ctrl-a [ = go up in screen buffer (use vim navigation in this mode)
+
+#sharing a screen across two users
+Ctrl-a :multiuser on 	Make the screen session a multi-user session (so other users can attach).
+Ctrl-a :acladd USER 	Allow the user specified (USER) to connect to a multi-user screen session.
