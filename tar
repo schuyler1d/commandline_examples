@@ -1,0 +1,4 @@
+#to copy files between servers quickly
+# http://happygiraffe.net/copy-net
+tar -czf - /some/file_or_dir |ssh host.name tar -xzf - -C /existing/destination_dir/
+

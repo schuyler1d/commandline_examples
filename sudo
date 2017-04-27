@@ -1,0 +1,2 @@
+sudo -i -u git ssh-agent bash -l
+# will sudo su git but allow you to use git's own local ssh keys

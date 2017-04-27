@@ -1,0 +1,6 @@
+# for dos files
+perl -pi -e 's/\r\n/\n/g' file
+# ^changes file in place
+#for mac files
+perl -pi -e 's/\r/\n/g' file
+

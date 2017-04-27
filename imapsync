@@ -1,0 +1,8 @@
+imapsync --host1 mail.example.com --ssl1 --port1 993 \
+            --user1 USERNAME --passfile1 pass1.txt \
+            --authmech1 PLAIN \
+         --host2 two.example.com --ssl2 --port2 993 \
+            --user2 USERNAME --passfile2 pass2.txt \
+            --authmech2 PLAIN \
+         --folder f \
+         --dry

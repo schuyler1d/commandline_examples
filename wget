@@ -1,0 +1,15 @@
+CRAWLING
+#takes forever (because 5 levels (default) includes all revisions, etc.)
+wget --recursive --page-requisites --convert-links --html-extension  http://docs.jquery.com/Main_Page
+
+#maybe for next time
+wget --recursive --page-requisites --level=3 --convert-links --html-extension  http://docs.jquery.com/Main_Page
+
+#NOTE: must wait until it finishes or the --convert-links wont' happen
+
+
+#for a flattened subdirectory
+wget --no-parent --domains=www.example.com --user=ccnmtl --password=XXXXX --recursive --page-requisites --level=4 --convert-links --html-extension --no-directories http://www.example.com/itc/core/lh/
+
+#-S is show headers
+wget -S --no-check-certificate https://static.example.com/static/webfonts/2410F7_0_0.ttf

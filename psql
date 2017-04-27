@@ -1,0 +1,3 @@
+http://www.postgresql.org/docs/current/static/functions-string.html
+
+update assetmgr_source set url='http://openvault.wgbh.org/fedora'||substring(url, 32) where url like 'http://openvaultfedora.wgbh.org/%';

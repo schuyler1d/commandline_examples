@@ -1,0 +1,40 @@
+login as root:
+--------------
+$ mysql -u root -p mysql
+
+create database:
+----------------
+CREATE DATABASE menagerie;
+
+
+create user:
+------------
+http://dev.mysql.com/doc/refman/5.0/en/adding-users.html
+
+(need both for remote and local connections)
+GRANT ALL PRIVILEGES ON *.* TO 'monty'@'%'
+   IDENTIFIED BY 'some_pass' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'monty'@'localhost'
+   IDENTIFIED BY 'some_pass' WITH GRANT OPTION;
+
+(for mediawiki setup)
+GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP
+   ON menagerie.* TO 'monty'@'localhost'
+   IDENTIFIED BY 'some_pass';
+
+(for drupal setup)
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, 
+                ALTER, CREATE TEMPORARY TABLES, LOCK TABLES
+     ON 
+
+(use ON menagerie.* TO 'monty'@'%' for access from the outside)
+
+
+(after you accidentally deleted the user table)
+[run mysqld_safe without privileges]
+INSERT into user (host, user, password, Select_priv , Insert_priv , Update_priv , Delete_priv , Create_priv , Drop_priv ,Reload_priv , Shutdown_priv , Process_priv , File_priv , Grant_priv , References_priv , Index_priv , Alter_priv , Show_db_priv ,Super_priv , Create_tmp_table_priv , Lock_tables_priv , Execute_priv ,Repl_slave_priv , Repl_client_priv,max_questions,max_updates,max_connections) values('localhost','root',password('somepassword'), 'Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y',0,0,0);
+
+
+look at fulltext vars
+---------------------
+SHOW VARIABLES LIKE 'ft%';

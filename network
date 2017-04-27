@@ -1,0 +1,6 @@
+sudo tcpdump -s3000 -X -i eth0 port 80
+
+netstat -tulpn | grep :80
+
+fuser -n tcp 80
+

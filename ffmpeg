@@ -1,0 +1,7 @@
+ffmpeg -i vid.flv -ac 2 -ab 320k -vn music.mp3
+
+#how to get the length of a video:
+mplayer -benchmark -vc null -vo null -nosound video.mov
+# and look at the first number after "V:"
+ffmpeg -i lina.mp4 -vpre /usr/local/share/ffmpeg/libx264-normal.ffpreset -vcodec libx264 small.mp4
+ffmpeg -i lina.mp4 -s 640x480 -vpre /usr/local/share/ffmpeg/libx264-normal.ffpreset -vcodec libx264 small.mp4

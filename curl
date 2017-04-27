@@ -1,0 +1,27 @@
+$ curl -X "POST" -d "" http://www.example.com/col/1
+
+Ask for headers-only from the server
+$ curl -I http://www.example.com/col/1
+
+--include: include the headers, but also ask for the content
+$ curl -i http://www.example.com/col/1
+
+--header: add a header:
+$ curl -H "Accept: text/xml" http://www.example.com/col/1
+
+--cookie:
+$ curl --cookie "tg-visit=92e045612430e41a8b78a1cd60eff6ea1aec8a9c; cookie2=value2" 
+
+See the whole HTTP session:
+$ curl -v http://www.example.com/col/1
+
+curl -H "User-Agent: iTunes/7.4.1" http://deimos3.apple.com/WebObjects/Core.woa/Browse/example.edu.1669274482
+
+
+openssl s_client -connect www.google.com:443
+GET / HTTP/1.1
+Host: encrypted.google.com
+
+
+WEBSOCKETS:
+curl -v -k -i -N -H"Sec-WebSocket-Version: 13" -H"Sec-WebSocket-Key: Ka0Fqq47/zRv1l8lRTz5nQ==" -H "Connection: Upgrade" -H "Upgrade: websocket" -H "Host: hub.example.com" -H "Origin: http://hub.example.com" http://localhost:8080/hub/123
